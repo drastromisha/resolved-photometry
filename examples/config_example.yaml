@@ -1,0 +1,33 @@
+# Example configuration for resphot.
+# Paths are relative to this file's folder. Each band needs a flux map, a noise
+# map, and a unit. Units: mjy_per_pixel | mjy_per_sr | hst_eps (with zeropoint_ab).
+
+pixscale_arcsec: 0.06
+redshift: null            # or a number, if known
+output_dir: resphot_output
+
+aperture_radii_arcsec:
+  core: 0.14
+  integrated: 1.40
+
+bands:
+  - label: b1
+    flux:  mock_data/mock_b1_flux.fits
+    noise: mock_data/mock_b1_noise.fits
+    unit:  mjy_per_pixel
+  - label: b2
+    flux:  mock_data/mock_b2_flux.fits
+    noise: mock_data/mock_b2_noise.fits
+    unit:  mjy_per_pixel
+  - label: b3
+    flux:  mock_data/mock_b3_flux.fits
+    noise: mock_data/mock_b3_noise.fits
+    unit:  mjy_per_pixel
+  - label: b4
+    flux:  mock_data/mock_b4_flux.fits
+    noise: mock_data/mock_b4_noise.fits
+    unit:  mjy_per_pixel
+  - label: b5
+    flux:  mock_data/mock_b5_flux.fits
+    noise: mock_data/mock_b5_noise.fits
+    unit:  mjy_per_pixel

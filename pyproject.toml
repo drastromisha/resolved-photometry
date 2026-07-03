@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resphot"
+version = "0.1.0"
+description = "Resolved aperture and per-pixel multi-band photometry for galaxy imaging."
+requires-python = ">=3.9"
+dependencies = ["numpy", "matplotlib", "astropy", "pandas", "pyyaml"]
+
+[tool.setuptools.packages.find]
+include = ["resphot*"]

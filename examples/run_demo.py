@@ -5,7 +5,9 @@ only data created at runtime — no external files needed.
 Run from the repo root:
     python examples/run_demo.py
 """
-import os
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")

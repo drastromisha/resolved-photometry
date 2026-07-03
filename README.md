@@ -1,6 +1,6 @@
 # resolved-photometry (resphot)
 
-Resolved aperture and per-pixel multi-band photometry for galaxy imaging.
+Resolved aperture and per-pixel multi-band photometry for galaxy imaging, a tool taht is necessary for resolved SED fitting.
 
 `resphot` measures fluxes from a set of co-registered, multi-band FITS maps of a
 galaxy — both in circular apertures and pixel-by-pixel — with unit conversion

@@ -7,7 +7,7 @@ Run from the repo root:
 """
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-
+from matplotlib.colors import LogNorm
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
@@ -64,7 +64,11 @@ print(f"  per-pixel table: {table_path} ({len(table)} pixels)")
 
 # 4. Diagnostic figure
 fig, ax = plt.subplots(figsize=(6, 5))
-im = ax.imshow(flux, origin="lower", cmap="inferno")
+pos = flux[flux > 0]
+vmin = np.percentile(pos, 50) if pos.size else 1e-3
+vmax = np.percentile(flux, 99.5)
+im = ax.imshow(flux, origin="lower", cmap="inferno",
+               norm=LogNorm(vmin=max(vmin, 1e-3), vmax=vmax))
 ax.add_patch(Circle((ix, iy), r_core, fill=False, ec="cyan", lw=2, label="core"))
 ax.add_patch(Circle((ix, iy), r_int, fill=False, ec="lime", lw=2, ls="--",
                     label="integrated"))
